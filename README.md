@@ -22,3 +22,23 @@ cd appJavaOpenTelemetry
 docker build -t appjava .
 docker run -d --name appjava -p 3002:8080 appjava
 ```
+
+## Build and run C# APP 
+
+Check file `appCSharp/Program.cs` and configure Redis Host
+
+```
+cd appCSharp
+docker build -t appcsharp .
+docker run -d --name appcsharp -p 3002:8080 appcsharp
+```
+
+## Build and run C# APP with OpenTelemetry Instrumentation
+
+Check file `appCSharp/Program.cs` and add configure SIGNOZ-HOST
+
+```
+cd appCSharpOpenTelemetry
+docker build -t appcsharp .
+docker run -d --name appcsharp -p 3002:8080 appcsharp
+```
