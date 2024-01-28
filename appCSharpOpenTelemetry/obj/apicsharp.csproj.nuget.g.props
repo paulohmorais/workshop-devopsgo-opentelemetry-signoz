@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/paulosantiago/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/paulosantiago/.nuget/packages/</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.8.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="/home/paulosantiago/.nuget/packages/" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <None Include="$(NuGetPackageRoot)opentelemetry.autoinstrumentation/1.3.0/contentFiles/any/any/instrument.cmd" Condition="Exists('$(NuGetPackageRoot)opentelemetry.autoinstrumentation/1.3.0/contentFiles/any/any/instrument.cmd')">
+      <NuGetPackageId>OpenTelemetry.AutoInstrumentation</NuGetPackageId>
+      <NuGetPackageVersion>1.3.0</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>instrument.cmd</TargetPath>
+      <Private>True</Private>
+      <Link>instrument.cmd</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)opentelemetry.autoinstrumentation/1.3.0/contentFiles/any/any/instrument.sh" Condition="Exists('$(NuGetPackageRoot)opentelemetry.autoinstrumentation/1.3.0/contentFiles/any/any/instrument.sh')">
+      <NuGetPackageId>OpenTelemetry.AutoInstrumentation</NuGetPackageId>
+      <NuGetPackageVersion>1.3.0</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>instrument.sh</TargetPath>
+      <Private>True</Private>
+      <Link>instrument.sh</Link>
+    </None>
+  </ItemGroup>
+</Project>

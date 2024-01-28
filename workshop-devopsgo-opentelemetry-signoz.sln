@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apicsharp", "apicsharpOpenTelemetry\apicsharp.csproj", "{63D298D5-3969-4EB9-8395-596C051A1CA9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apicsharp (1)", "apicsharp\apicsharp.csproj", "{4EC4ECF3-5294-4BD7-AF73-D5A7377FCA91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63D298D5-3969-4EB9-8395-596C051A1CA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D298D5-3969-4EB9-8395-596C051A1CA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D298D5-3969-4EB9-8395-596C051A1CA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D298D5-3969-4EB9-8395-596C051A1CA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EC4ECF3-5294-4BD7-AF73-D5A7377FCA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EC4ECF3-5294-4BD7-AF73-D5A7377FCA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EC4ECF3-5294-4BD7-AF73-D5A7377FCA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EC4ECF3-5294-4BD7-AF73-D5A7377FCA91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C0F019F-D513-4185-AB99-5094C56535FF}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "DxNWoaxfqmkWcBdEOh5XP6ddbrHdvcHVFcRoUM7iC8OvKLB6aNok+keUddPee86tthUYsNFuDU2JwWK2rdqO1Q==",
+  "success": true,
+  "projectFilePath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharp/apicsharp.csproj",
+  "expectedPackageFiles": [
+    "/home/paulosantiago/.nuget/packages/microsoft.aspnetcore.authorization/5.0.0-rc.2.20475.17/microsoft.aspnetcore.authorization.5.0.0-rc.2.20475.17.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.aspnetcore.components/5.0.0-rc.2.20475.17/microsoft.aspnetcore.components.5.0.0-rc.2.20475.17.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.aspnetcore.components.analyzers/5.0.0-rc.2.20475.17/microsoft.aspnetcore.components.analyzers.5.0.0-rc.2.20475.17.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.aspnetcore.components.web.extensions/5.0.0-preview9.20513.1/microsoft.aspnetcore.components.web.extensions.5.0.0-preview9.20513.1.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.aspnetcore.metadata/5.0.0-rc.2.20475.17/microsoft.aspnetcore.metadata.5.0.0-rc.2.20475.17.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.extensions.caching.stackexchangeredis/8.0.0/microsoft.extensions.caching.stackexchangeredis.8.0.0.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/microsoft.jsinterop/5.0.0-rc.2.20475.17/microsoft.jsinterop.5.0.0-rc.2.20475.17.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/stackexchange.redis/2.6.122/stackexchange.redis.2.6.122.nupkg.sha512",
+    "/home/paulosantiago/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
