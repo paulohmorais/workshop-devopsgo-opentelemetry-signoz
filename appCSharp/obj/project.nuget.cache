@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DxNWoaxfqmkWcBdEOh5XP6ddbrHdvcHVFcRoUM7iC8OvKLB6aNok+keUddPee86tthUYsNFuDU2JwWK2rdqO1Q==",
+  "dgSpecHash": "WZy028/buTZo1JsTEePNmZJrlwTmp/t9zO9K5wY4O2TMXD0WOZKownGTkXmyeXE6VaU/ZLSytUOwuJlrVwJX8A==",
   "success": true,
-  "projectFilePath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharp/apicsharp.csproj",
+  "projectFilePath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharp/apicsharp.csproj",
   "expectedPackageFiles": [
     "/home/paulosantiago/.nuget/packages/microsoft.aspnetcore.authorization/5.0.0-rc.2.20475.17/microsoft.aspnetcore.authorization.5.0.0-rc.2.20475.17.nupkg.sha512",
     "/home/paulosantiago/.nuget/packages/microsoft.aspnetcore.components/5.0.0-rc.2.20475.17/microsoft.aspnetcore.components.5.0.0-rc.2.20475.17.nupkg.sha512",

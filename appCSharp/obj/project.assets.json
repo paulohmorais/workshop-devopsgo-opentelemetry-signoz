@@ -667,11 +667,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharp/apicsharp.csproj",
+      "projectUniqueName": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharp/apicsharp.csproj",
       "projectName": "apicsharp",
-      "projectPath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharp/apicsharp.csproj",
+      "projectPath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharp/apicsharp.csproj",
       "packagesPath": "/home/paulosantiago/.nuget/packages/",
-      "outputPath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharp/obj/",
+      "outputPath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/paulosantiago/.nuget/NuGet/NuGet.Config"

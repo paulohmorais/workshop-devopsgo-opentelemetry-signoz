@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharpOpenTelemetry/apicsharp.csproj": {}
+    "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharpOpenTelemetry/apicsharp.csproj": {}
   },
   "projects": {
-    "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharpOpenTelemetry/apicsharp.csproj": {
+    "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharpOpenTelemetry/apicsharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharpOpenTelemetry/apicsharp.csproj",
+        "projectUniqueName": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharpOpenTelemetry/apicsharp.csproj",
         "projectName": "apicsharp",
-        "projectPath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharpOpenTelemetry/apicsharp.csproj",
+        "projectPath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharpOpenTelemetry/apicsharp.csproj",
         "packagesPath": "/home/paulosantiago/.nuget/packages/",
-        "outputPath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharpOpenTelemetry/obj/",
+        "outputPath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharpOpenTelemetry/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/paulosantiago/.nuget/NuGet/NuGet.Config"

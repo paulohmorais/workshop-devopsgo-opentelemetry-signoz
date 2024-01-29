@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OOPlG6c3/b8PDym9rDHzmSQJxONUYsiWlCdyUBOx/Oa2+Vt4rOkls4TlsecAy2JCJwCxkn8TD6XAKJYQedxZxQ==",
+  "dgSpecHash": "CtN5nmRcbnkw6xuPpWeeYCE5H8TF/pfCEoOguzVkrUIwAuD/5mLXmxY1Q5TpeqT2TAo9RRMis0Fo8F1BLvQHNA==",
   "success": true,
-  "projectFilePath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/apicsharpOpenTelemetry/apicsharp.csproj",
+  "projectFilePath": "/home/paulosantiago/VSCode/workshop-devopsgo-opentelemetry-signoz/appCSharpOpenTelemetry/apicsharp.csproj",
   "expectedPackageFiles": [
     "/home/paulosantiago/.nuget/packages/google.protobuf/3.22.5/google.protobuf.3.22.5.nupkg.sha512",
     "/home/paulosantiago/.nuget/packages/grpc.core.api/2.52.0/grpc.core.api.2.52.0.nupkg.sha512",

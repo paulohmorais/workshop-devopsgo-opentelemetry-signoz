@@ -42,3 +42,7 @@ cd appCSharpOpenTelemetry
 docker build -t appcsharp .
 docker run -d --name appcsharp -p 3002:8080 appcsharp
 ```
+
+## Build and run NodeJS APP 
+
+## Build and run NodeJS APP with OpenTelemetry Instrumentation
