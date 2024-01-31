@@ -3,6 +3,12 @@
 Repositório do workshop **Implementando observabilidade com Signoz e OpenTelemetry** realizado no HUB Goiás em Goiânia pela comunidade DevOpsGO. No dia 03/02/2024. 
 
 
+## To start redis
+
+`docker run --name some-redis -p 6379:6379 -d redis`
+
+Check redis is running with: `docker ps`
+
 ## Build and run Java APP 
 
 Check file `appJava/src/main/resources/application.properties` and configure Redis Host
