@@ -2,12 +2,15 @@ const express = require("express");
 const Redis = require('ioredis');
 const axios = require('axios');
 
-const PORT = process.env.PORT || "3000";
+const PORT = process.env.PORT || "3001";
 const app = express();
 const USER_API1 = 'https://jsonplaceholder.typicode.com/users/'; //fake public api
 const USER_API2 = 'https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8' //fake public api
 
-const redis = new Redis();
+const redis = new Redis({
+  host: '10.0.0.165',
+  port: 6379,
+});
 
 app.get("/", (req, res) => {
   res.send("Hello World");

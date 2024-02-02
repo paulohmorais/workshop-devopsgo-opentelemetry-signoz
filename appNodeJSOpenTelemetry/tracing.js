@@ -8,7 +8,7 @@
   const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
   
   const exporterOptions = {
-    url: 'http://SIGNOZ-HOST:4318/v1/traces'
+    url: 'http://10.0.0.165:4318/v1/traces'
   }
   
   const traceExporter = new OTLPTraceExporter(exporterOptions);
