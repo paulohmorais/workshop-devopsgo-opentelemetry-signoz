@@ -113,7 +113,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart otelcol-contrib
 ```
 
-Now edit the config file /etc/otelcol-contrib/config.yaml add the below config, with otel collector endpoint:
+Now edit the config file `/etc/otelcol-contrib/config.yaml`` add the below config, with otel collector endpoint:
 
 
 ```
