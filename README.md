@@ -2,6 +2,14 @@
 
 Repositório do workshop **Implementando observabilidade com Signoz e OpenTelemetry** realizado no HUB Goiás em Goiânia pela comunidade DevOpsGO. No dia 03/02/2024. 
 
+## To running SigNoz self-hosted with docker
+
+```
+git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/
+./install.sh
+```
+
+On your browser go to http://localhost:3301/.
 
 ## All apps need redis for cache content, to start redis with docker run
 
@@ -26,7 +34,7 @@ Check file `appCSharp/Program.cs` and add configure SIGNOZ-HOST
 ```
 cd appCSharpOpenTelemetry
 docker build -t appcsharp .
-docker run -d --name appcsharp -p 3002:3000 appcsharp
+docker run -d --name appcsharp -p 3000:3000 appcsharp
 ```
 
 ## Build and run NodeJS APP 
@@ -78,4 +86,90 @@ helm install my-release signoz/k8s-infra  \
 ```
 
 The dashboards to import on SigNoz can be found [here](helm install my-release signoz/k8s-infra  \
---set otelCollectorEndpoint=<IP-or-Endpoint-of-SigNoz-OtelCollector>:4317)
+--set otelCollectorEndpoint=<IP-or-Endpoint-of-SigNoz-OtelCollector>:4317
+
+
+## Collector linux metrics and logs
+
+Install otel-collector-contrib on linux host
+
+```
+sudo apt-get update
+sudo apt-get -y install wget
+wget https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.93.0/otelcol-contrib_0.93.0_linux_amd64.deb
+sudo dpkg -i otelcol-contrib_0.93.0_linux_amd64.deb
+```
+To collect host logs at `/var/log/` we need root permission. So edit the file `/lib/systemd/system/otelcol-contrib.service`` for set User and Group as root:
+
+```
+User=root
+Group=root
+```
+
+After restart otel-contrib with new config:
+
+```
+sudo systemctl daemon-reload
+sudo systemctl restart otelcol-contrib
+```
+
+Now edit the config file /etc/otelcol-contrib/config.yaml add the below config, with otel collector endpoint:
+
+
+```
+extensions:
+  health_check:
+  pprof:
+    endpoint: 0.0.0.0:1777
+  zpages:
+    endpoint: 0.0.0.0:55679
+
+receivers:
+  hostmetrics:
+    collection_interval: 10s
+    scrapers:
+      cpu:
+      disk:
+      filesystem:
+      load:
+      memory:
+      network:
+      paging:
+  filelog:
+    include: [ /var/log/*log ]
+    start_at: end
+
+processors:
+  batch:
+  resourcedetection:
+    detectors: [env, system]
+  cumulativetodelta:
+
+exporters:
+  otlp:
+    endpoint: <IP-or-Endpoint-of-SigNoz-OtelCollector>:4317
+    tls:
+      insecure: false
+    headers:
+      "signoz-access-token": "<SIGNOZ_INGESTION_KEY>"
+
+service:
+  pipelines:
+    metrics:
+      receivers: [hostmetrics]
+      processors: [cumulativetodelta, batch, resourcedetection]
+      exporters: [otlp]
+    logs:
+      receivers: [filelog]
+      processors: [batch, resourcedetection]
+      exporters: [otlp]
+
+  extensions: [health_check, pprof, zpages]
+
+```
+
+And restart OpenTelemetry Contrib Collector:
+
+```
+sudo systemctl restart otelcol-contrib
+```
