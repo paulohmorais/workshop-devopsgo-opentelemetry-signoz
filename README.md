@@ -85,7 +85,7 @@ helm install my-release signoz/k8s-infra  \
 --set otelCollectorEndpoint=<IP-or-Endpoint-of-SigNoz-OtelCollector>:4317
 ```
 
-The dashboards to import on SigNoz can be found [here](helm install my-release signoz/k8s-infra  \
+The dashboards to import on SigNoz can be found ![here](helm install my-release signoz/k8s-infra  \
 --set otelCollectorEndpoint=<IP-or-Endpoint-of-SigNoz-OtelCollector>:4317
 
 
