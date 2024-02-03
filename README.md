@@ -78,16 +78,14 @@ docker run -d --name appjava -p 3002:8080 appjava
 
 ## Monitoring k8s with opentelemetry
 
+Install helm chart
+
 ```
 helm repo add signoz https://charts.signoz.io
 helm repo update
 helm install my-release signoz/k8s-infra  \
 --set otelCollectorEndpoint=<IP-or-Endpoint-of-SigNoz-OtelCollector>:4317
 ```
-
-The dashboards to import on SigNoz can be found ![here](helm install my-release signoz/k8s-infra  \
---set otelCollectorEndpoint=<IP-or-Endpoint-of-SigNoz-OtelCollector>:4317
-
 
 ## Collector linux metrics and logs
 
