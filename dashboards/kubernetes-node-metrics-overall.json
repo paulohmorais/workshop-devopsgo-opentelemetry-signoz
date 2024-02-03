@@ -1,0 +1,579 @@
+{
+  "description": "",
+  "layout": [
+    {
+      "h": 2,
+      "i": "a2cd4e4a-0b81-4a85-937f-48ca5c9f183b",
+      "moved": false,
+      "static": false,
+      "w": 6,
+      "x": 0,
+      "y": 3
+    },
+    {
+      "h": 3,
+      "i": "18c1653b-f826-460d-9302-90bc6d3f5e52",
+      "moved": false,
+      "static": false,
+      "w": 6,
+      "x": 6,
+      "y": 0
+    },
+    {
+      "h": 2,
+      "i": "1406e6b6-0c99-46d4-9782-530f6e7e053a",
+      "moved": false,
+      "static": false,
+      "w": 6,
+      "x": 6,
+      "y": 3
+    },
+    {
+      "h": 3,
+      "i": "e16d581d-1da9-49ff-9c3b-1bb51c2f7730",
+      "moved": false,
+      "static": false,
+      "w": 6,
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "tags": [],
+  "title": "Kubernetes Node Metrics - Overall",
+  "variables": {
+    "e5f00450-af60-4350-956b-5b06ee9d233f": {
+      "allSelected": true,
+      "customValue": "",
+      "description": "",
+      "id": "e5f00450-af60-4350-956b-5b06ee9d233f",
+      "key": "node_name",
+      "modificationUUID": "36c6acf9-7ab1-4520-a688-6aff516d3758",
+      "multiSelect": true,
+      "name": "node_name",
+      "order": 0,
+      "queryValue": "SELECT DISTINCT JSONExtractString(labels, 'k8s_node_name') AS k8s_node_name\nFROM signoz_metrics.distributed_time_series_v2\nWHERE metric_name = 'k8s_node_cpu_time'",
+      "selectedValue": ["default"],
+      "showALLOption": true,
+      "sort": "DISABLED",
+      "textboxValue": "",
+      "type": "QUERY"
+    }
+  },
+  "widgets": [
+    {
+      "description": "",
+      "id": "e16d581d-1da9-49ff-9c3b-1bb51c2f7730",
+      "isStacked": false,
+      "nullZeroValues": "zero",
+      "opacity": "1",
+      "panelTypes": "graph",
+      "query": {
+        "builder": {
+          "queryData": [
+            {
+              "aggregateAttribute": {
+                "dataType": "float64",
+                "id": "k8s_node_cpu_time--float64----true",
+                "isColumn": true,
+                "key": "k8s_node_cpu_time",
+                "type": ""
+              },
+              "aggregateOperator": "sum_rate",
+              "dataSource": "metrics",
+              "disabled": true,
+              "expression": "A",
+              "filters": {
+                "items": [
+                  {
+                    "id": "134c1068",
+                    "key": {
+                      "dataType": "string",
+                      "id": "k8s_node_name--string--tag--false",
+                      "isColumn": false,
+                      "key": "k8s_node_name",
+                      "type": "tag"
+                    },
+                    "op": "in",
+                    "value": [
+                      "{{.node_name}}"
+                    ]
+                  }
+                ],
+                "op": "AND"
+              },
+              "groupBy": [
+                {
+                  "dataType": "string",
+                  "id": "k8s_node_name--string--tag--false",
+                  "isColumn": false,
+                  "key": "k8s_node_name",
+                  "type": "tag"
+                }
+              ],
+              "having": [],
+              "legend": "{{k8s_node_name}}",
+              "limit": null,
+              "orderBy": [],
+              "queryName": "A",
+              "reduceTo": "sum",
+              "stepInterval": 60
+            },
+            {
+              "aggregateAttribute": {
+                "dataType": "float64",
+                "id": "k8s_node_allocatable_cpu--float64----true",
+                "isColumn": true,
+                "key": "k8s_node_allocatable_cpu",
+                "type": ""
+              },
+              "aggregateOperator": "avg",
+              "dataSource": "metrics",
+              "disabled": true,
+              "expression": "B",
+              "filters": {
+                "items": [
+                  {
+                    "id": "a41025e9",
+                    "key": {
+                      "dataType": "string",
+                      "id": "k8s_node_name--string--tag--false",
+                      "isColumn": false,
+                      "key": "k8s_node_name",
+                      "type": "tag"
+                    },
+                    "op": "in",
+                    "value": [
+                      "{{.node_name}}"
+                    ]
+                  }
+                ],
+                "op": "AND"
+              },
+              "groupBy": [
+                {
+                  "dataType": "string",
+                  "id": "k8s_node_name--string--tag--false",
+                  "isColumn": false,
+                  "key": "k8s_node_name",
+                  "type": "tag"
+                }
+              ],
+              "having": [],
+              "legend": "{{k8s_node_name}}",
+              "limit": null,
+              "orderBy": [],
+              "queryName": "B",
+              "reduceTo": "sum",
+              "stepInterval": 60
+            }
+          ],
+          "queryFormulas": [
+            {
+              "disabled": false,
+              "expression": "A/B",
+              "legend": "{{k8s_node_name}}",
+              "queryName": "F1"
+            }
+          ]
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "bcd2a81a-1a12-44e0-9314-074e6fbf4f48",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      },
+      "timePreferance": "GLOBAL_TIME",
+      "title": "Node CPU usage",
+      "yAxisUnit": "percentunit"
+    },
+    {
+      "description": "",
+      "id": "1406e6b6-0c99-46d4-9782-530f6e7e053a",
+      "isStacked": false,
+      "nullZeroValues": "zero",
+      "opacity": "1",
+      "panelTypes": "graph",
+      "query": {
+        "builder": {
+          "queryData": [
+            {
+              "aggregateAttribute": {
+                "dataType": "float64",
+                "id": "k8s_node_filesystem_available--float64----true",
+                "isColumn": true,
+                "key": "k8s_node_filesystem_available",
+                "type": ""
+              },
+              "aggregateOperator": "avg",
+              "dataSource": "metrics",
+              "disabled": true,
+              "expression": "A",
+              "filters": {
+                "items": [
+                  {
+                    "id": "dbf8dbef",
+                    "key": {
+                      "dataType": "string",
+                      "id": "k8s_node_name--string--tag--false",
+                      "isColumn": false,
+                      "key": "k8s_node_name",
+                      "type": "tag"
+                    },
+                    "op": "in",
+                    "value": [
+                      "{{.node_name}}"
+                    ]
+                  }
+                ],
+                "op": "AND"
+              },
+              "groupBy": [
+                {
+                  "dataType": "string",
+                  "id": "k8s_node_name--string--tag--false",
+                  "isColumn": false,
+                  "key": "k8s_node_name",
+                  "type": "tag"
+                }
+              ],
+              "having": [],
+              "legend": "",
+              "limit": null,
+              "orderBy": [],
+              "queryName": "A",
+              "reduceTo": "sum",
+              "stepInterval": 60
+            },
+            {
+              "aggregateAttribute": {
+                "dataType": "float64",
+                "id": "k8s_node_filesystem_capacity--float64----true",
+                "isColumn": true,
+                "key": "k8s_node_filesystem_capacity",
+                "type": ""
+              },
+              "aggregateOperator": "avg",
+              "dataSource": "metrics",
+              "disabled": true,
+              "expression": "B",
+              "filters": {
+                "items": [
+                  {
+                    "id": "95836c2f",
+                    "key": {
+                      "dataType": "string",
+                      "id": "k8s_node_name--string--tag--false",
+                      "isColumn": false,
+                      "key": "k8s_node_name",
+                      "type": "tag"
+                    },
+                    "op": "in",
+                    "value": [
+                      "{{.node_name}}"
+                    ]
+                  }
+                ],
+                "op": "AND"
+              },
+              "groupBy": [
+                {
+                  "dataType": "string",
+                  "id": "k8s_node_name--string--tag--false",
+                  "isColumn": false,
+                  "key": "k8s_node_name",
+                  "type": "tag"
+                }
+              ],
+              "having": [],
+              "legend": "",
+              "limit": null,
+              "orderBy": [],
+              "queryName": "B",
+              "reduceTo": "sum",
+              "stepInterval": 60
+            }
+          ],
+          "queryFormulas": [
+            {
+              "disabled": false,
+              "expression": "(B-A)/B",
+              "legend": "{{k8s_node_name}}",
+              "queryName": "F1"
+            }
+          ]
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "27adea4f-4878-4a1f-aeac-1fa3ac390cb3",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      },
+      "timePreferance": "GLOBAL_TIME",
+      "title": "Node filesystem usage",
+      "yAxisUnit": "percentunit"
+    },
+    {
+      "description": "",
+      "id": "18c1653b-f826-460d-9302-90bc6d3f5e52",
+      "isStacked": false,
+      "nullZeroValues": "zero",
+      "opacity": "1",
+      "panelTypes": "graph",
+      "query": {
+        "builder": {
+          "queryData": [
+            {
+              "aggregateAttribute": {
+                "dataType": "float64",
+                "id": "k8s_node_memory_working_set--float64----true",
+                "isColumn": true,
+                "key": "k8s_node_memory_working_set",
+                "type": ""
+              },
+              "aggregateOperator": "avg",
+              "dataSource": "metrics",
+              "disabled": true,
+              "expression": "A",
+              "filters": {
+                "items": [
+                  {
+                    "id": "f0ecd9d9",
+                    "key": {
+                      "dataType": "string",
+                      "id": "k8s_node_name--string--tag--false",
+                      "isColumn": false,
+                      "key": "k8s_node_name",
+                      "type": "tag"
+                    },
+                    "op": "in",
+                    "value": [
+                      "{{.node_name}}"
+                    ]
+                  }
+                ],
+                "op": "AND"
+              },
+              "groupBy": [
+                {
+                  "dataType": "string",
+                  "id": "k8s_node_name--string--tag--false",
+                  "isColumn": false,
+                  "key": "k8s_node_name",
+                  "type": "tag"
+                }
+              ],
+              "having": [],
+              "legend": "",
+              "limit": null,
+              "orderBy": [],
+              "queryName": "A",
+              "reduceTo": "sum",
+              "stepInterval": 60
+            },
+            {
+              "aggregateAttribute": {
+                "dataType": "float64",
+                "id": "k8s_node_allocatable_memory--float64----true",
+                "isColumn": true,
+                "key": "k8s_node_allocatable_memory",
+                "type": ""
+              },
+              "aggregateOperator": "avg",
+              "dataSource": "metrics",
+              "disabled": true,
+              "expression": "B",
+              "filters": {
+                "items": [
+                  {
+                    "id": "5699ee4b",
+                    "key": {
+                      "dataType": "string",
+                      "id": "k8s_node_name--string--tag--false",
+                      "isColumn": false,
+                      "key": "k8s_node_name",
+                      "type": "tag"
+                    },
+                    "op": "in",
+                    "value": [
+                      "{{.node_name}}"
+                    ]
+                  }
+                ],
+                "op": "AND"
+              },
+              "groupBy": [
+                {
+                  "dataType": "string",
+                  "id": "k8s_node_name--string--tag--false",
+                  "isColumn": false,
+                  "key": "k8s_node_name",
+                  "type": "tag"
+                }
+              ],
+              "having": [],
+              "legend": "",
+              "limit": null,
+              "orderBy": [],
+              "queryName": "B",
+              "reduceTo": "sum",
+              "stepInterval": 60
+            }
+          ],
+          "queryFormulas": [
+            {
+              "disabled": false,
+              "expression": "A/B",
+              "legend": "{{k8s_node_name}}",
+              "queryName": "F1"
+            }
+          ]
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "06b0e4a9-4a02-4282-9209-cac1fee15fb4",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      },
+      "timePreferance": "GLOBAL_TIME",
+      "title": "Node memory usage (WSS)",
+      "yAxisUnit": "percentunit"
+    },
+    {
+      "description": "",
+      "id": "a2cd4e4a-0b81-4a85-937f-48ca5c9f183b",
+      "isStacked": false,
+      "nullZeroValues": "zero",
+      "opacity": "1",
+      "panelTypes": "graph",
+      "query": {
+        "builder": {
+          "queryData": [
+            {
+              "aggregateAttribute": {
+                "dataType": "float64",
+                "id": "k8s_node_network_io--float64----true",
+                "isColumn": true,
+                "key": "k8s_node_network_io",
+                "type": ""
+              },
+              "aggregateOperator": "sum_rate",
+              "dataSource": "metrics",
+              "disabled": false,
+              "expression": "A",
+              "filters": {
+                "items": [
+                  {
+                    "id": "6c0d6399",
+                    "key": {
+                      "dataType": "string",
+                      "id": "k8s_node_name--string--tag--false",
+                      "isColumn": false,
+                      "key": "k8s_node_name",
+                      "type": "tag"
+                    },
+                    "op": "in",
+                    "value": [
+                      "{{.node_name}}"
+                    ]
+                  }
+                ],
+                "op": "AND"
+              },
+              "groupBy": [
+                {
+                  "dataType": "string",
+                  "id": "interface--string--tag--false",
+                  "isColumn": false,
+                  "key": "interface",
+                  "type": "tag"
+                },
+                {
+                  "dataType": "string",
+                  "id": "direction--string--tag--false",
+                  "isColumn": false,
+                  "key": "direction",
+                  "type": "tag"
+                },
+                {
+                  "dataType": "string",
+                  "id": "k8s_node_name--string--tag--false",
+                  "isColumn": false,
+                  "key": "k8s_node_name",
+                  "type": "tag"
+                }
+              ],
+              "having": [],
+              "legend": "{{k8s_node_name}}-{{interface}}-{{direction}}",
+              "limit": null,
+              "orderBy": [],
+              "queryName": "A",
+              "reduceTo": "sum",
+              "stepInterval": 60
+            }
+          ],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "fc8517f0-ee1d-4162-ba01-b87f21074fa5",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      },
+      "timePreferance": "GLOBAL_TIME",
+      "title": "Node network IO",
+      "yAxisUnit": "bytes"
+    }
+  ]
+}

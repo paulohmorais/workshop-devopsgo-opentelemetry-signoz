@@ -173,3 +173,5 @@ And restart OpenTelemetry Contrib Collector:
 ```
 sudo systemctl restart otelcol-contrib
 ```
+
+## Export dashboard from dashboard folder
