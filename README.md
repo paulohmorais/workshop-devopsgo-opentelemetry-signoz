@@ -99,7 +99,7 @@ sudo apt-get -y install wget
 wget https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.93.0/otelcol-contrib_0.93.0_linux_amd64.deb
 sudo dpkg -i otelcol-contrib_0.93.0_linux_amd64.deb
 ```
-To collect host logs at `/var/log/` we need root permission. So edit the file `/lib/systemd/system/otelcol-contrib.service`` for set User and Group as root:
+To collect host logs at `/var/log/` we need root permission. So edit the file `/lib/systemd/system/otelcol-contrib.service` for set User and Group as root:
 
 ```
 User=root
